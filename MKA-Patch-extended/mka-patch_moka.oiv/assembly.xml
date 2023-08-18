@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--======================================================-->
+<!--       Generated with  :   OpenIV Package Manager -->
+<!--       * Author  :   moka -->
+<!--       * Version  :   1.0 -->
+<!--       * Release date  :   13/07/2023 -->
+<!--======================================================-->
+<package version="2.1" id="{a31ef637-2614-4f79-8af0-06b0b27370dd}" target="Five">
+  <metadata>
+    <name>MKA - Patch</name>
+    <version>
+      <major>1</major>
+      <minor>0</minor>
+      <tag>STABLE</tag>
+    </version>
+    <author>
+      <displayName>moka</displayName>
+      <web>https://ko-fi.com/einmoka</web>
+    </author>
+    <description><![CDATA[MKA - Patch
+
+]]></description>
+  </metadata>
+  <colors>
+    <headerBackground useBlackTextColor="false">$FF000000</headerBackground>
+    <iconBackground>$FF000000</iconBackground>
+  </colors>
+  <content>
+    <archive path="update\update.rpf" createIfNotExist="False" type="RPF7">
+      <add source="update\update.rpf\game.dat151.rel">x64\audio\config\game.dat151.rel</add>
+      <xml path="\common\data\dlclist.xml" />
+    </archive>
+    <archive path="update\update.rpf" createIfNotExist="True" type="RPF7">
+      <text path="common\data\dlclist.xml" createIfNotExist="False">
+        <insert where="Before" line="*&lt;/Paths&gt;*" condition="Mask">		&lt;Item&gt;dlcpacks:/qolpack/&lt;/Item&gt;</insert>
+      </text>
+    </archive>
+    <archive path="update\update.rpf" createIfNotExist="True" type="RPF7">
+      <text path="common\data\dlclist.xml" createIfNotExist="False">
+        <insert where="Before" line="*&lt;/Paths&gt;*" condition="Mask">		&lt;Item&gt;dlcpacks:/mka_weapons/&lt;/Item&gt;</insert>
+      </text>
+    </archive>
+  </content>
+</package>
